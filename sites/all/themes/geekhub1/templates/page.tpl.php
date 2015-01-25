@@ -94,11 +94,11 @@
     <h1><a href="/">GeekHub</a></h1>
     <ul class="nav">
       <li><a href="/">Головна</a></li>
-      <li><a href="/about.html">Про GeekHub</a></li>
-      <li><a href="/team">Команда</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
-      <li><a href="/contacts.html">Зв’язок</a></li>
-      <li><a href="/contacts.html"><?php echo $theme_path . "/images/splash.png"; ?></a></li>
+      <li><a href="/?q=about">Про GeekHub</a></li>
+      <li><a href="/?q=team">Команда</a></li>
+      <li><a href="/?q=faq">FAQ</a></li>
+      <li><a href="/?q=contacts">Зв’язок</a></li>
+      <?php /*echo $theme_path . "/images/splash.png"; */?>
     </ul>
     <ul class="links">
       <li class="fb"><a href="http://www.facebook.com/pages/GeekHub/158983477520070">facebook</a></li>
@@ -188,9 +188,9 @@
     <li>
       <ul class="nav">
         <li><a href="/">Головна</a></li>
-        <li><a href="/about.html">Про GeekHub</a></li>
-        <li><a href="/team.html">Команда</a></li>
-        <li><a href="/contacts.html">Зв’язок</a></li>
+        <li><a href="/?q=about">Про GeekHub</a></li>
+        <li><a href="/?q=team">Команда</a></li>
+        <li><a href="/?q=contacts">Зв’язок</a></li>
       </ul>
     </li>
     <li>© Copyright 2011</li>
