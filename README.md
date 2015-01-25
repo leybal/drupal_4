@@ -1,2 +1,1 @@
-**GeekHub
-Pass: 111111**
+**GeekHub Pass: 111111**
