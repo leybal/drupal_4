@@ -1,0 +1,32 @@
+<?php
+function pogoda_block_info () {
+    $blocks['pogoda'] = array(
+        'info' => "Out pogoda block"
+    );
+    return $blocks;
+}
+
+function pogoda_block_view ($delta = '') {
+    switch($delta) {
+        case 'pogoda':
+            $block['content'] = block_function();
+            break;
+    }
+    return $block;
+}
+
+function block_function() {
+    $output = theme ('pogoda_template', array( $variable => 'Petya' ));
+    return $output;
+}
+
+function pogoda_theme(){
+    return array(
+        'pogoda_template' => array(
+            'template' => 'pogoda_template',
+            'variables' => array('variable' => 'Vasya')
+        )
+    );
+
+}
+?>
