@@ -16,7 +16,7 @@ function pogoda_block_view ($delta = '') {
 }
 
 function block_function() {
-    $output = theme ('pogoda_template', array( $variable => 'Petya' ));
+    $output = theme ('pogoda_template', array( 'variable' => 'Petya' ));
     return $output;
 }
 

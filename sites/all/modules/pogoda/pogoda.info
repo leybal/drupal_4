@@ -1,4 +1,4 @@
-name = Easy
+name = Pogoda
 description = Pogoda description
 core = 7.x
 files[] = pogoda.module
