@@ -16,7 +16,7 @@ function pogoda_block_view ($delta = '') {
 }
 
 function block_function() {
-    $output = theme ('pogoda_template', array( 'variable' => 'Petya' ));
+    $output = theme ('pogoda_template', array( 'variable' => 'Черкаси' ));
     return $output;
 }
 
@@ -27,6 +27,63 @@ function pogoda_theme(){
             'variables' => array('variable' => 'Vasya')
         )
     );
+}
+
+function pogoda_menu() {
+
+    $items['simple_page/main-tab'] = array(
+        'title' => 'Simple page (main tab)',
+        'page callback' => 'my_first_form',
+        'access callback' => TRUE,
+        'menu_name' => 'main-menu',
+        /*'file' => 'pages.php',*/
+    );
+
+    return $items;
+}
+
+
+/* FORM */
+function my_first_form($form, &$form_state){
+    $form=array();
+    $form['name'] = array(
+        '#type'    => 'textfield',
+        '#title' => t('Введіть назву міста:'),
+        '#default_value' => t('Черкаси'),
+    );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Submit'),
+    );
+    return $form;
+}
+
+function main_function(){
+    $form = drupal_get_form('my_first_form'); //отримуєм поля форми
+    //$form['admin']['#pre_render'] = array('<form>');
+
+    $form = drupal_render($form); //рендерим форму
+    //$form['admin']['#post_render'] = array('</form>');
+    return $form;
 
 }
+
+function my_first_form_validate($form, &$form_state){
+    if($form_state['values']['maiden_name']==''){
+        $form_state['values']['maiden_name']='Отсутствует';
+    }
+    if(mb_strlen($form_state['values']['name'])<3){
+        form_set_error('name', t('Слишком короткое имя.'));
+    }
+}
+
+
+function my_first_form_submit($form, &$form_state){
+    $name = $form_state['values']['name'];
+    debug($form_state['values']);
+    /*variable_set('mymodule_pogoda_town', intval($form_state['values']['name']));*/
+    drupal_set_message(t('Налаштування блока погоди збережено.'));
+}
+
+
 ?>
