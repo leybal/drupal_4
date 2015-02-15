@@ -9,7 +9,8 @@
             <div class="siTitle"><span id="siHeader"></span>
             </div>
             <div class="siCity">
-                <div class="siCityName"><a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-<?php print $variable; ?>" target="_blank">Погода у <span>Черкасах</span></a>
+                <div class="siCityName">
+                    <a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-<?php print $variable;?>" target="_blank">Погода у місті <span><?php print $variable; ?></span></a>
                 </div>
                 <div id="siCont0" class="siBodyContent">
                     <div class="siLeft">
@@ -29,6 +30,4 @@
             </div>
         </div>
     </div><script type="text/javascript" charset="UTF-8" src="//sinoptik.ua/informers_js.php?title=3&amp;wind=1&amp;cities=303028869&amp;lang=ua"></script>
-
-
 </div>
